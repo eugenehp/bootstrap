@@ -1,0 +1,137 @@
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $max_width: map-get($container-max-widths,$breakpoint);
+        $width: to-number($max_width);
+        
+        .category-height    { 
+            @if $width > 700 {
+                height: 200px;
+            }@else if $width > 0 {
+                height: $width/3;
+            }@else {
+                height: 160px;
+            }
+        }
+        
+        .row-height    { 
+            @if $width > 700 {
+                height: 700px;
+            }@else if $width > 0 {
+                height: $width;
+            }@else {
+                height: 320px;
+            }
+        }
+        
+        .row-height-top    { 
+            @if $width > 700 {
+                height: 700px;
+            }@else if $width > 0 {
+                height: $width;
+            }@else {
+                height: 580px;
+            }
+        }
+        
+        .search-row-height    { 
+            @if $width > 700 {
+                height: 793px;
+            }@else if $width > 0 {
+                height: $width+93;
+            }@else {
+                height: 580px+93;
+            }
+        }
+        
+        .arrow-left {
+            position: absolute;
+            left: 20px;
+            @if $width > 700 {
+                top: 50%;
+                transform: translate(0,-50%);
+            }@else{
+                top: 60%;
+                transform: translate(0,-60%);
+            }
+        }
+
+        .arrow-right {
+            position: absolute;
+            right: 20px;
+            @if $width > 700 {
+                top: 50%;
+                transform: translate(0,-50%);
+            }@else{
+                top: 60%;
+                transform: translate(0,-60%);
+            }
+        }
+        
+        .crystalParadise.font-header{
+            @if $width > 700 {
+                font-size: 2.5em;
+            }@else{
+                font-size: 1.25em;   
+            }
+        }
+        
+        .crystalParadise.font-text{
+            @if $width > 700 {
+                font-size: 1.375em;
+            }@else{
+                font-size: 0.7em;   
+            }
+        }
+        
+        .floralExplosion.font-header{
+            @if $width > 0 {
+                font-size: $width / 35;   
+            }@else {
+                font-size: 0.62em;
+            }
+        }
+        
+        .floralExplosion.font-text{
+            @if $width > 0 {
+                font-size: $width / 65;   
+            }@else {
+                font-size: 0.35em;
+            }
+        }
+        
+        .lightingCalculator.font-header{
+            @if $width > 0 {
+                font-size: $width / 35;   
+            }@else {
+                font-size: 0.62em;
+            }
+        }
+        
+        .lightingCalculator.font-text{
+            @if $width > 0 {
+                font-size: $width / 51;   
+            }@else {
+                font-size: 0.42em;
+            }
+        }
+        
+        .bottom-link {
+            padding-left: 10px;
+            padding-right: 10px;
+            letter-spacing: 1px;
+            @if $width > 0 {
+                font-size: $width / 70;   
+            }@else {
+                font-size: 0.65em; 
+            }
+        }
+        
+        .quote-product-image {
+            @if $width > 0 {
+                height: 100%;   
+            }@else {
+                height: 35vw; 
+            }
+        }
+    }
+}
